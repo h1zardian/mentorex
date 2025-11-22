@@ -24,3 +24,5 @@ dnf5 install -y  bibata-cursor-themes papirus-icon-theme
 #### Example for enabling a System Unit File
 
 #systemctl enable podman.socket
+
+sed -i.bak '/starship init bash/s/^/# /' /etc/bashrc
