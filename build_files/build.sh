@@ -12,10 +12,10 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 -y copr enable peterwu/rendezvous
 
-dnf5 install -y  bibata-cursor-themes papirus-icon-theme
+dnf5 install -y  bibata-cursor-themes papirus-icon-theme java-25-openjdk
 
 # Use a COPR Example:
-#
+
 # dnf5 -y copr enable ublue-os/staging
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
@@ -25,4 +25,5 @@ dnf5 install -y  bibata-cursor-themes papirus-icon-theme
 
 #systemctl enable podman.socket
 
+# Removing starship from system bashrc bashconfig, becuse I don't like bling in bash.
 sed -i.bak '/starship init bash/s/^/# /' /etc/bashrc
